@@ -1,0 +1,50 @@
+{
+  "name": "openscad-mcp-server",
+  "version": "2026.05.0",
+  "description": "OpenSCAD 3D modeling MCP server with MCP Apps interactive UI - deployable on Vercel",
+  "type": "module",
+  "main": "dist/src/mcp-server.js",
+  "types": "dist/src/mcp-server.d.ts",
+  "scripts": {
+    "build:ui": "vite build --config ui/vite.config.ts",
+    "inline-html": "node scripts/inline-html.mjs",
+    "build:server": "tsc",
+    "build": "npm run build:ui && npm run inline-html && npm run build:server",
+    "vercel-build": "npm run build:ui && npm run inline-html",
+    "serve": "node scripts/dev-server.mjs",
+    "dev:ui": "vite --config ui/vite.config.ts",
+    "test": "vitest run && node tests/smoke-mcp.mjs",
+    "test:node": "node tests/run.mjs",
+    "lint": "tsc --noEmit"
+  },
+  "keywords": [
+    "mcp",
+    "mcp-apps",
+    "openscad",
+    "3d",
+    "cad",
+    "modeling",
+    "vercel"
+  ],
+  "author": "OpenSCAD MCP Team",
+  "license": "MIT",
+  "dependencies": {
+    "@modelcontextprotocol/ext-apps": "^1.7.1",
+    "@modelcontextprotocol/sdk": "^1.12.0",
+    "fastmcp": "^1.23.0",
+    "three": "^0.184.0",
+    "zod": "^3.25.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.0.0",
+    "@types/three": "^0.184.1",
+    "tsx": "^4.0.0",
+    "typescript": "^5.8.0",
+    "vite": "^7.3.3",
+    "vite-plugin-singlefile": "^2.3.3",
+    "vitest": "^3.0.0"
+  },
+  "engines": {
+    "node": ">=22"
+  }
+}

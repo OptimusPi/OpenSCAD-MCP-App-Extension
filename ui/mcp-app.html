@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, viewport-fit=cover"
+    />
+    <title>OpenSCAD Preview</title>
+  </head>
+  <body>
+    <div id="root">
+      <div class="tabs" role="tablist">
+        <button id="tab-3d" class="tab is-active" role="tab">3D</button>
+        <button id="tab-code" class="tab" role="tab">Code</button>
+      </div>
+
+      <section id="view-3d" class="view is-active">
+        <div id="viewport"></div>
+        <div id="badge" class="badge" hidden></div>
+        <div id="caption" class="caption"></div>
+      </section>
+
+      <section id="view-code" class="view">
+        <button id="copy-btn" class="copy-btn">Copy</button>
+        <pre id="code"><code></code></pre>
+      </section>
+    </div>
+    <script type="module" src="./src/mcp-app.ts"></script>
+  </body>
+</html>
